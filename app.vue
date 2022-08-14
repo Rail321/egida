@@ -2,10 +2,26 @@
   <div>
     <div class="row min-h-100vh page">
       <div class="col-12 col-lg-2">
-        <div class="navigation h-100vh top-0 position-sticky overflow-lg-auto" ref="navigation">
-          <div v-for="index of 15" v-bind:key="index">
-            <a href="/">Link</a>
-          </div><br>
+        <div class="navigation h-100vh top-0 position-sticky overflow-lg-auto d-flex flex-column" ref="navigation">
+          <div class="logo">
+            <div class="logo-inner"></div>
+          </div>
+
+          <div>
+            <div v-for="index of 15" v-bind:key="index">
+              <p class="item">Link</p>
+            </div><br>
+          </div>
+
+          <div class="flex-grow-1 flex-basis-auto">
+            <div class="h-100 decoration">
+              <div class="decoration-inner"></div>
+            </div>
+          </div>
+
+          <div>
+            <a href="/">Link to privacy policy</a>
+          </div>
         </div>
       </div>
       
@@ -87,12 +103,32 @@
     height: 100vh;
   }
 
+  .h-100 {
+    height: 100%;
+  }
+
   .top-0 {
     top: 0;
   }
 
   .position-sticky {
     position: sticky;
+  }
+
+  .d-flex {
+    display: flex;
+  }
+
+  .flex-column {
+    flex-direction: column;
+  }
+
+  .flex-grow-1 {
+    flex-grow: 1;
+  }
+
+  .flex-basis-auto {
+    flex-basis: auto;
   }
 
   body {
@@ -127,5 +163,23 @@
     border-radius: 7.5px;
     border: 4px solid midnightblue;
     background-color: rgb(230, 230, 250, .5)
+  }
+
+  .item {
+    color: white;
+  }
+
+  .logo {
+    width: 100%;
+    max-width: 70px;
+    margin: 0 auto;
+  }
+  .logo-inner {
+    padding-top: 20%;
+    background-color: white;
+  }
+
+  .decoration {
+    background-color: white;
   }
 </style>
